@@ -8,8 +8,10 @@ class Git_hook extends CI_Controller {
       $doit=false;
       foreach(json_decode($this->input->post('payload'))->commits as $c){
         if(strpos($c->message,'#publish') !== false)
+          $doit=true;
       }
-      passthru('git pull');
+      if($doit)
+        passthru('git pull');
     }
   }
 }

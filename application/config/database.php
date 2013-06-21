@@ -76,7 +76,7 @@
 | the query builder class.
 */
 
-$active_group = 'default';
+$active_group = 'uber';
 $query_builder = FALSE;
 
 $db['default'] = array(
@@ -112,7 +112,7 @@ $db['uber']['hostname'] = 'localhost';
 $db['uber']['username'] = $myCnf['user'];
 $db['uber']['password'] = $myCnf['database'];
 $db['uber']['database'] = 'nonchip_nw_website';
-$db['uber']['dbdriver'] = 'mysqli';
+$db['uber']['dbdriver'] = 'mysql';
 $db['uber']['dbprefix'] = '';
 $db['uber']['pconnect'] = TRUE;
 $db['uber']['db_debug'] = TRUE;

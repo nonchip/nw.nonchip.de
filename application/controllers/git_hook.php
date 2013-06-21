@@ -8,10 +8,11 @@ class Git_hook extends CI_Controller {
       $doit=false;
       $mig=false;
       foreach(json_decode($this->input->post('payload'))->commits as $c){
-        if(strpos($c->message,'#publish') !== false)
+        if(strpos($c->message,'#publish') !== false){
           $doit=true;
-        if(in_array('application/config/migration.php',$c->modified))
-          $mig=true;
+          if(in_array('application/config/migration.php',$c->modified))
+            $mig=true;
+        }
       }
       if($doit)
         system('git pull');

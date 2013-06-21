@@ -64,7 +64,7 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
-f=file("/home/nonchip/.my.cnf");
+$f=file("/home/nonchip/.my.cnf");
 $myCnf=array();
 foreach($f as $l){
   $p=explode("=",$l,2);

@@ -73,7 +73,7 @@ foreach($f as $l){
 }
 $db['uber']['hostname'] = 'localhost';
 $db['uber']['username'] = $myCnf['user'];
-$db['uber']['password'] = $myCnf['database'];
+$db['uber']['password'] = $myCnf['password'];
 $db['uber']['database'] = 'nonchip_nw_website';
 $db['uber']['dbdriver'] = 'mysql';
 $db['uber']['dbprefix'] = '';

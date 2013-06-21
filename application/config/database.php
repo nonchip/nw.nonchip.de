@@ -45,7 +45,7 @@
 | the active record class
 */
 
-$active_group = 'default';
+$active_group = 'uber';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
@@ -64,6 +64,29 @@ $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
 
+$f=file("/home/nonchip/.my.cnf");
+$myCnf=array();
+foreach($f as $l){
+  $p=explode("=",$l,2);
+  if(count($p)>1)
+    $myCnf[$p[0]]=trim($p[1]);
+}
+$db['uber']['hostname'] = 'localhost';
+$db['uber']['username'] = $myCnf['user'];
+$db['uber']['password'] = $myCnf['database'];
+$db['uber']['database'] = 'nonchip_nw_website';
+$db['uber']['dbdriver'] = 'mysql';
+$db['uber']['dbprefix'] = '';
+$db['uber']['pconnect'] = TRUE;
+$db['uber']['db_debug'] = TRUE;
+$db['uber']['cache_on'] = FALSE;
+$db['uber']['cachedir'] = '';
+$db['uber']['char_set'] = 'utf8';
+$db['uber']['dbcollat'] = 'utf8_general_ci';
+$db['uber']['swap_pre'] = '';
+$db['uber']['autoinit'] = TRUE;
+$db['uber']['stricton'] = FALSE;
+unset($myCnf);
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

@@ -27,5 +27,3 @@ class NiceController extends CI_Controller {
     $this->load->vars(array($a=>$v));
   }
 }
-
-}

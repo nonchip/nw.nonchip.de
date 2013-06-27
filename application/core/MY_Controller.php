@@ -7,9 +7,10 @@ class NiceController extends CI_Controller {
     parent::__construct();
     $this->load->helper('text');
     $this->load->helper('inflector');
-    $this->config->load('site', FALSE, TRUE);
-    $this->load->vars(array('site'=>$this->config->item('site')));
+    $this->config->load('site',TRUE,TRUE);
+    $this->load->vars($this->config->config);
     $this->load->vars(array('page'=>array(
+      'cdir'=>$this->router->directory,
       'cclass'=>$this->router->fetch_class(),
       'cmethod'=>$this->router->fetch_method(),
       'title'=>humanize(character_limiter($this->router->fetch_class(),10)).'/'.humanize(character_limiter($this->router->fetch_method(),10)),
@@ -17,8 +18,12 @@ class NiceController extends CI_Controller {
     )));
 	}
   protected function page($k,$v){
-    $a=$this->load->get_var('page');
-    $a[$k]=$v;
-    $this->load->vars(array('page'=>$a));
+    $this->avar_add(array($k=>$v));
+  }
+  protected function avar_add($d,$a){
+    $v=$this->load->get_var($a);
+    if(!is_array($v))$v=array();
+    $v=array_merge($v,$d);
+    $this->load->vars(array($a=>$v));
   }
 }

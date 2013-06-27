@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-$config['site']['title']='NW';
-$config['site']['heading']='Die Nachtw&ouml;lfe';
+$config['title']='NW';
+$config['heading']='Die Nachtw&ouml;lfe';
 
 $config['site']['style']=array(
   'header_height'=>'6.5em',

@@ -25,9 +25,30 @@
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='<?=$site['style']['bgcolor']?>',GradientType=0 ); /* IE6-9 */
       }
       div#heading h1{
-        margin: 0.5em;
-        margin-left: 2em;
+        margin: 1em 2em;
         font-variant:small-caps;
+        display: inline-block;
+      }
+
+      div#heading ul li a{
+        font-variant:small-caps;
+        text-decoration: none;
+        color: <?=$site['style']['content_bgcolor']?>;
+      }
+      div#heading ul li a:hover{
+        font-weight: bold;
+      }
+      div#heading ul{
+        display: inline-block;
+      }
+      div#heading ul li{
+        border-right: 1px solid <?=$site['style']['content_bgcolor']?>;
+        display: inline;
+        list-style: none;
+        padding: 0 1em;
+      }
+      div#heading ul li:first-child{
+        border-left: 1px solid <?=$site['style']['content_bgcolor']?>;
       }
 
       div#nav{
@@ -56,6 +77,9 @@
 
       img#tabard{
         float: right;
+        top: -120px;
+        right: -120px;
+        position: relative;
       }
     </style>
   </head>
@@ -66,6 +90,11 @@
       <h1>
         <?=$site['heading']?>
       </h1>
+      <ul>
+        <li><a href='<?=site_url('/')?>'>Home</a></li>
+        <li><a href='http://bb.nw.nonchip.de/' target='_blank'>Forum</a></li>
+        <li><a href='http://eu.battle.net/wow/en/guild/malygos/die_Nachtw%C3%B6lfe/' target='_blank'>@MalygosEU</a></li>
+      </ul>
     </div>
     <div id='nav'>
     </div>
